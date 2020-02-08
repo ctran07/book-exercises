@@ -17,7 +17,8 @@ View(flights)
 # gained or lost while flying (that is: how much of the delay arriving occured
 # during flight, as opposed to before departing).
 flights <- mutate(flights, delayed_in_air = arr_delay - dep_delay)
-
+flights %<%
+  mutate(gain_in_air = arr_delay)
 
 # Use `dplyr` to sort your data frame in descending order by the column you just
 # created. Remember to save this as a variable (or in the same one!)
